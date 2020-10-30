@@ -9,13 +9,13 @@ from botocore.exceptions import ClientError
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-# try:
-#     from cfnresponse import CfnResponse
-#     from action import Action
-# except ImportError as ex:
-#     logger.exception('Failed import.')
-#     from inf_cc.twilio.resources.workflow.source.cfnresponse import CfnResponse
-#     from inf_cc.twilio.resources.workflow.source.action import Action
+try:
+    from cfnresponse import CfnResponse
+    from action import Action
+except ImportError as ex:
+    logger.exception('Failed import.')
+    from b_cfn_twilio_workflow.source.action import Action
+    from b_cfn_twilio_workflow.source.cfnresponse import CfnResponse
 
 logger.info(f'Version of boto3 lib: {boto3.__version__}.')
 logger.info(f'Version of botocore lib: {botocore.__version__}.')
