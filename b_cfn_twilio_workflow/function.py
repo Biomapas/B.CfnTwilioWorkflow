@@ -23,8 +23,7 @@ class TwilioWorkflowSingletonFunction(SingletonFunction):
             name: str,
             twilio_account_sid: str,
             twilio_auth_token: str,
-            twilio_workspace_sid: str,
-            twilio_task_queue_sid: str
+            twilio_workspace_sid: str
     ) -> None:
         self.__name = name
 
@@ -40,8 +39,7 @@ class TwilioWorkflowSingletonFunction(SingletonFunction):
             environment={
                 'TWILIO_ACCOUNT_SID': twilio_account_sid,
                 'TWILIO_AUTH_TOKEN': twilio_auth_token,
-                'TWILIO_WORKSPACE_SID': twilio_workspace_sid,
-                'TWILIO_TASK_QUEUE_SID': twilio_task_queue_sid
+                'TWILIO_WORKSPACE_SID': twilio_workspace_sid
             }
         )
 
